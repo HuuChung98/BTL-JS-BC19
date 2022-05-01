@@ -34,7 +34,7 @@ function display(products) {
             <td>${product.backCamera}</td>
             <td>${product.frontCamera}</td>
             <td>
-            <img src = "${product.img}" width="50" height="50" />
+                <img src = "${product.img}" width="50" height="50" />
             </td> 
             <td> ${product.desc} </td>
             <td> ${product.type} </td>

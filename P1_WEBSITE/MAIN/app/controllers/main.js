@@ -5,7 +5,7 @@ init();
 function init() {
     // Lấy DS sản phẩm để hiện thị ra table  
     // console.log("object  LINE 6");
-    productManager.getProducts().then(()=> {
+    productManager.getProducts().then(() => {
         console.log(productManager.products);
         // Set lại biến products trong ProductManager 
         // productManager.products = result.data;
@@ -25,26 +25,51 @@ function display(products) {
         //     item.description,
         //     item.image
         // );
+        // console.log("CHUNG LINE 28");
         return result + `
-        <tr>
-            <td>${index + 1}</td>
-            <td>${product.name}</td>
-            <td>${product.price}</td>
-            <td>${product.screen}</td>
-            <td>${product.backCamera}</td>
-            <td>${product.frontCamera}</td>
-            <td>
-            <img src = "${product.img}" width="50" height="50" />
-            </td> 
-            <td> ${product.desc} </td>
-            <td> ${product.type} </td>
-            <td>
-                <button class = "btn btn-primary">Update</button>
-                <button class = "btn btn-danger">Delete</button>
-            </td>
-        </tr>`
+        <div>
+            <div class="card">
+               
+                <div class="top-bar">
+          <i class="fab fa-apple"></i>
+          <em class="stocks">In Stock</em>
+        </div>
+        <div class="img-container">
+          <img class="product-img"
+            src="
+            ${product.img}"
+            alt="">
+          <div class="out-of-stock-cover"><span>Out Of Stock</span></div>
+        </div>
+        <div class="details">
+          <div class="name-fav">
+            <strong class="product-name">${product.name}</strong>
+            <!-- <button onclick="this.classList.toggle(&quot;fav&quot;)" class="heart"><i class="fas fa-heart"></i></button> -->
+          </div>
+          <div class="wrapper">
+            <h5>${product.desc}</h5>
+            <p>${product.screen}</p>
+            <p>${product.backCamera}</p>
+            <p>${product.frontCamera}</p>
+            <p>${product.type}</p>
+            <!-- <p>${product.price}</p> -->
+            
+          </div>
+          <div class="purchase">
+            <p class="product-price"><p>${product.price}</p></p>
+            <span class="btn-add">
+              <div>
+                <button onclick="addItem(this)" class="add-btn">Add <i class="fas fa-chevron-right"></i></button>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+        </div>
+
+        `
     }, "")
-    document.getElementById("tblDanhSachSP").innerHTML = html;
+    document.getElementById("disProduct").innerHTML = html;
 }
 
 // Xử lý nút thêm sản phẩm 
@@ -66,19 +91,19 @@ document.querySelector('.modal-footer').addEventListener('click', (event) => {
     const image = document.getElementById('HinhSP').value;
     const description = document.getElementById("MotaSP").value;
 
-    const product = new Product(name, price,image, description)
+    const product = new Product(name, price, image, description)
     const targetEl = event.target;
-    
+
     // Cách thông thường sau này khi áp dụng thêm, xóa sản phẩm trên giao diện 
-    if(targetEl.id === "btnCreate") {
+    if (targetEl.id === "btnCreate") {
         productManager.createProduct(product).then(() => {
             // thêm thành công sẽ hiển thị SP mới thêm ra giao diện 
             return productManager.getProducts();
-            
+
         })
-        .then(() => {
-            display(productManager.products);
-        });
+            .then(() => {
+                display(productManager.products);
+            });
         // console.log(targetEl);
         // handleCreateProduct(product);
     }

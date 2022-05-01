@@ -1,11 +1,11 @@
-function Product(name, price, screen, backCamera, frontCamera, img, desc, type) {
+function Product(img, name, desc, screen, backCamera, frontCamera, type, price) {
+    this.img = img;
     this.name = name;
-    this.price = price;
+    this.desc = desc;
     this.screen = screen;
     this.backCamera = backCamera;
     this.frontCamera = frontCamera;
-    this.img = img;
-    this.desc = desc;
     this.type = type;
+    this.price = price;
     
 }

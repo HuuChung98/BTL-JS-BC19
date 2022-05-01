@@ -1,6 +1,6 @@
 function ProductManager() {
     this.products = [];
-}
+};
 
 ProductManager.prototype.getProducts = function() {
     // Call API lấy DS sản phẩm
@@ -9,19 +9,21 @@ ProductManager.prototype.getProducts = function() {
         axios.get("https://62528e0f69af39728b501bf1.mockapi.io/chung/products/").then((result) => {
             this.products = result.data.map((item) => {
                 const product = new Product(
-                    item.name,
-                    item.price,
-                    item.screen, 
-                    item.backCamera,
-                    item.frontCamera,
-                    // item.                  
                     item.img,
-                    item.desc,
-                    item.type                              
+                    item.name,
+                    item.desc, 
+                    item.screen,
+                    item.backCamera,
+                    // item.                  
+                    item.frontCamera,
+                    item.type,
+                    item.price                              
                 );
                 return product;
+                // console.log(products);
             });
             resolve();
+            // console.log(products);
         }).catch((error) => {
             console.log(error.response.data);
             reject(error);
@@ -53,7 +55,7 @@ ProductManager.prototype.getProductById = function() {};
 ProductManager.prototype.createProduct = function(product) {
     
         // gọi API thêm SP  
-        return axios.post("https://62528e0f69af39728b501bf1.mockapi.io/chung/products/", product);
+        return axios.post("https://62528e0f69af39728b501bf1.mockapi.io/chung/products//", product);
 };
 ProductManager.prototype.updateProduct = function() {};
 ProductManager.prototype.deleteProduct = function() {};

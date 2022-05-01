@@ -1,240 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Quản lý sản phẩm</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler d-lg-none"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        ></button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="dropdownId"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Dropdown</a
-              >
-              <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="#">Action 1</a>
-                <a class="dropdown-item" href="#">Action 2</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+  <title>Shopping</title>
 
-      <header class="display-4 my-4">
-        Thực hành javascript - axios
-      </header>
-      <!-- Phan tab menu -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            href="#DanhSachSP"
-            role="tab"
-            data-toggle="tab"
-            >Danh sách sản phẩm</a
-          >
-        </li>
-        
-      </ul>
-      <br />
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <!--Danh sách sản phẩm -->
-        <div role="tabpanel" class="tab-pane  in active" id="DanhSachSP">
-          <div class="row">
-            <div class="col-md-8">
-              <!-- BEGIN BUTTOM THÊM MỚI -->
-              <button
-                id="btnThemSP"
-                class="btn btn-success"
-                data-toggle="modal"
-                data-target="#myModal"
-              >
-                <i class="fa fa-plus mr-1"></i>
-                Thêm Mới
-              </button>
-              <!-- END BUTTON THÊM MỚI -->
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1058.0" data-gr-ext-installed="">
+  <div id="app">
+    <div>
+
+      <div class="banner">
+
+        <div class="main-cart" id="disProduct">
+          <div class="card" id="disPl">
+            <!-- <div class="top-bar">
+              <i class="fab fa-apple"></i>
+              <em class="stocks">In Stock</em>
+            </div> -->
+            <div class="img-container">
+              <!-- <img class="product-img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJiKtlpQGkIeOyAPV3qQMNkl8uuRzfGWZtIDb_WgDnam8WjhpL&amp;usqp=CAU"
+                alt="">
+              <div class="out-of-stock-cover"><span>Out Of Stock</span></div> -->
             </div>
-            <div class="col-md-4">
-              <!-- BEGIN TÌM KIẾM -->
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Nhập từ khóa"
-                  aria-label="Recipient's username"
-                  aria-describedby="basic-addon2"
-                />
-                <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2"
-                    ><i class="fa fa-search"></i
-                  ></span>
-                </div>
+            <div class="details">
+              <!-- <div class="name-fav">
+                <strong class="product-name">Airpods Pro</strong>
+              </div> -->
+              <!-- <div class="wrapper">
+                <h5>Wireless Noise Cancelling Earphones</h5>
+                <p>AirPods Pro have been designed to deliver active Noise Cancellation for immersive sound. Transparancy
+                  mode so much can hear your surroundings.</p>
               </div>
-              <!-- END TÌM KIẾM -->
+              <div class="purchase">
+                <p class="product-price">$ 400</p>
+                <span class="btn-add">
+                  <div>
+                    <button onclick="addItem(this)" class="add-btn">Add <i class="fas fa-chevron-right"></i></button>
+                  </div>
+                </span>
+              </div> -->
             </div>
           </div>
-          <div class="clear-fix"></div>
-          <div class="tblSanPham" id="tblSanPham">
-            <!-- BEGIN TABLE SẢN PHẨM -->
-            <table class="table table-bordered">
-              <thead>
-                <th>STT</th>
-                <th>Tên Sản Phẩm</th>
-                <th>Giá</th>
-                <th>Màn hình</th>
-                <th>Camera sau</th>
-                <th>Camera trước</th>
-                <th>Hình Ảnh</th>
-                <th>Mô Tả</th>
-                <th>Loại</th>                
-                <th>Action</th>
-              </thead>
-              <tbody id="tblDanhSachSP"></tbody>
-            </table>
-            <!-- END TABLE SẢN PHẨM -->
-          </div>
-          <br />
-        </div>
-        <!-- Kết thúc danh sách sản phẩm -->       
-      </div>
-
-      <!--KetThuc Tabmenu-->
-
-      <!-- The Modal -->
-      <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Heading</h4>
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
+          <div class="card" id="disPl">
+            <!-- <div class="top-bar">
+              <i class="fab fa-apple"></i>
+              <em class="stocks">In Stock</em>
+            </div> -->
+            <div class="img-container">
+              <!-- <img class="product-img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJiKtlpQGkIeOyAPV3qQMNkl8uuRzfGWZtIDb_WgDnam8WjhpL&amp;usqp=CAU"
+                alt="">
+              <div class="out-of-stock-cover"><span>Out Of Stock</span></div> -->
             </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Tên Sản Phẩm</label>
-                <input
-                  id="TenSP"
-                  class="form-control"
-                  placeholder="Nhập vào tên sản phẩm"
-                />
+            <div class="details">
+              <!-- <div class="name-fav">
+                <strong class="product-name">Airpods Pro</strong>
+              </div> -->
+              <!-- <div class="wrapper">
+                <h5>Wireless Noise Cancelling Earphones</h5>
+                <p>AirPods Pro have been designed to deliver active Noise Cancellation for immersive sound. Transparancy
+                  mode so much can hear your surroundings.</p>
               </div>
-              <div class="form-group">
-                <label>Giá</label>
-                <input
-                  id="GiaSP"
-                  class="form-control"
-                  placeholder="Nhập vào giá"
-                />
-              </div> 
-              <div class="form-group">
-                <label>Màn hình</label>
-                <input
-                  id="Screen"
-                  class="form-control"
-                  placeholder="Nhập vào giá"
-                />
-              </div>           
-              <div class="form-group">
-                <label>Hình Ảnh</label>
-                <input
-                  id="HinhSP"
-                  class="form-control"
-                  placeholder="Nhập vào hình sản phẩm"
-                />
-              </div>
-              <div class="form-group">
-                <label>Mô tả </label>
-                <input
-                id="MotaSP"
-                class="form-control"
-                placeholder="mô tả"
-              />
-                <!-- <select class="form-control" id="loaiSP">
-                  <option value="phone">Phone</option>
-                  <option value="laptop">Laptop</option>
-                  <option value="other">Other</option>
-                </select> -->
-              </div>
+              <div class="purchase">
+                <p class="product-price">$ 400</p>
+                <span class="btn-add">
+                  <div>
+                    <button onclick="addItem(this)" class="add-btn">Add <i class="fas fa-chevron-right"></i></button>
+                  </div>
+                </span>
+              </div> -->
             </div>
-            <!-- Modal footer -->
-            <div class="modal-footer"></div>
+          </div>
+          <div class="card" id="disPl">
+            <div></div>
+            <!-- <div class="top-bar">
+              <i class="fab fa-apple"></i>
+              <em class="stocks">In Stock</em>
+            </div> -->
+            <div class="img-container">
+              <!-- <img class="product-img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJiKtlpQGkIeOyAPV3qQMNkl8uuRzfGWZtIDb_WgDnam8WjhpL&amp;usqp=CAU"
+                alt="">
+              <div class="out-of-stock-cover"><span>Out Of Stock</span></div> -->
+            </div>
+            <div class="details">
+              <!-- <div class="name-fav">
+                <strong class="product-name">Airpods Pro</strong>
+              </div> -->
+              <!-- <div class="wrapper">
+                <h5>Wireless Noise Cancelling Earphones</h5>
+                <p>AirPods Pro have been designed to deliver active Noise Cancellation for immersive sound. Transparancy
+                  mode so much can hear your surroundings.</p>
+              </div>
+              <div class="purchase">
+                <p class="product-price">$ 400</p>
+                <span class="btn-add">
+                  <div>
+                    <button onclick="addItem(this)" class="add-btn">Add <i class="fas fa-chevron-right"></i></button>
+                  </div>
+                </span>
+              </div> -->
+            </div>
+          </div>
+          <div class="card" id="disPl">
+            <!-- <div class="top-bar">
+              <i class="fab fa-apple"></i>
+              <em class="stocks">In Stock</em>
+            </div> -->
+            <div class="img-container">
+              <!-- <img class="product-img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJiKtlpQGkIeOyAPV3qQMNkl8uuRzfGWZtIDb_WgDnam8WjhpL&amp;usqp=CAU"
+                alt="">
+              <div class="out-of-stock-cover"><span>Out Of Stock</span></div> -->
+            </div>
+            <div class="details">
+              <!-- <div class="name-fav">
+                <strong class="product-name">Airpods Pro</strong>
+              </div> -->
+              <!-- <div class="wrapper">
+                <h5>Wireless Noise Cancelling Earphones</h5>
+                <p>AirPods Pro have been designed to deliver active Noise Cancellation for immersive sound. Transparancy
+                  mode so much can hear your surroundings.</p>
+              </div>
+              <div class="purchase">
+                <p class="product-price">$ 400</p>
+                <span class="btn-add">
+                  <div>
+                    <button onclick="addItem(this)" class="add-btn">Add <i class="fas fa-chevron-right"></i></button>
+                  </div>
+                </span>
+              </div> -->
+            </div>
           </div>
         </div>
+
+        <div class="nav">
+          <button onclick="sideNav(1)"><i class="fas fa-shopping-cart" style="font-size:2rem;"></i></button>
+          <span class="total-qty">0</span>
+        </div>
+        <div onclick="sideNav(0)" class="cover"></div>
+        <div class="cover purchase-cover"></div>
+        <div class="cart">
+          <div class="side-nav">
+            <button onclick="sideNav(0)"><i class="fas fa-times"></i></button>
+            <h2>Cart</h2>
+            <div class="cart-items"></div>
+            <div class="final">
+              <strong>Total: $ <span class="total">0</span></strong>
+              <div class="action">
+                <button onclick="buy(1)" class="btn buy">Purchase <i class="fas fa-credit-card"
+                    style="color:#6665dd;"></i></button>
+                <button onclick="clearCart()" class="btn clear">Clear Cart <i class="fas fa-trash"
+                    style="color:#bb342f;"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stock-limit">
+          <em>You Can Only Buy 10 Items For Each Product</em>
+          <button class="btn-ok" onclick="limitPurchase(this)">Okay</button>
+        </div>
+        <div class="order-now"></div>
       </div>
     </div>
-    <div id="container"></div>
-    <style>
-      #container {
-        min-width: 310px;
-        max-width: 800px;
-        height: 400px;
-        margin: 0 auto;
-      }
-    </style>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../models/Product.js"></script>
-    <script src="../models/ProductManager.js"></script>
-    <script src="../controllers/main.js"></script>
-  </body>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../models/Product.js"></script>
+  <script src="../models/ProductManager.js"></script>
+  <script src="../controllers/main.js"></script>
+
+
+</body>
+
 </html>
